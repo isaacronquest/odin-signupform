@@ -1,57 +1,24 @@
-/* CSS Reset */
-
-/* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
-  box-sizing: border-box;
+@font-face {
+  font-family: 'norse';
+  src: url('font/norse-bold-webfont.woff2') format('woff2'),
+        url('font/norse-bold-webfont.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
 }
 
-/* 2. Remove default margin */
-* {
+html, body {
+  width: 100%;
+  height: 100%;
   margin: 0;
 }
 
 body {
-  /* 3. Add accessible line-height */
-  line-height: 1.5;
-  /* 4. Improve text rendering */
-  -webkit-font-smoothing: antialiased;
-}
-
-/* 5. Improve media defaults */
-img, picture, video, canvas, svg {
-  display: block;
-  max-width: 100%;
-}
-
-/* 6. Inherit fonts for form controls */
-input, button, textarea, select {
-  font: inherit;
-}
-
-/* 7. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
-  overflow-wrap: break-word;
-}
-
-/* 8. Improve line wrapping */
-p {
-  text-wrap: pretty;
-}
-h1, h2, h3, h4, h5, h6 {
-  text-wrap: balance;
-}
-
-
-/* Project CSS */
-
-section {
+  font-family: 'Josefin Sans', sans-serif;
   display: flex;
-  height: 100vh;
 }
 
 .imageContainer {
   width: 30%;
-  height: 100%;
   background-image: url('background.jpg');
   background-size: cover;
   padding-top: 200px;
@@ -62,23 +29,134 @@ section {
   justify-content: space-between;
 }
 
-.formContainer {
-  width: 70%;
-  height: 100%;
-  background: #fff;
-}
-
 .logoContainer {
   width: 100%;
-  height: 160px;
-  padding: 12px;
+  height: 120px;
+  padding: 16px 0px;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 #logoImg {
   height: 100%;
+}
+
+.formContainer {
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formHeader, .formBody, .formFooter {
+  flex: 1;
+  padding: 40px 40px;
+}
+
+.formHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.formHeader > p, 
+.formBody > p {
+  font-size: 20px;
+  font-weight: 600;
+  max-width: 640px;
+}
+
+.formBody {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.formRow {
+  display: flex;
+  width: 560px;
+  gap: 60px;
+  margin-bottom: 20px;
+}
+
+div.formRow > div {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+
+label, input {
+  display: block;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px;
+  height: 30px;
+}
+
+input {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+input:focus {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+input[type="password"]:invalid {
+  outline: rgb(200, 0, 0) auto 5px;
+}
+
+input + span {
+  position: relative;
+}
+
+input[type="password"]:invalid + span::before {
+  font-size: 0.7rem;
+  position: absolute;
+  content: "Password not valid";
+  color: rgb(200, 0, 0);
+  top: 36px;
+  left: -244px;
+}
+
+button {
+  width: 200px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: #596D48;
+  border-radius: 5px;
+  border: none;
+}
+
+h1 {
+  font-size: 6rem;
+  color: #fff;
+  margin: 0;
+  font-family: 'norse', sans-serif;
+}
+
+#sourceText {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#sourceText > a {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.formFooter a {
+  color: #596D48;
+  text-decoration: none;
+  font-weight: 600;
 }

@@ -7,7 +7,6 @@
   <title>Document</title>
 </head>
 <body>
-  <section>
     <div class="imageContainer">
       <div class="logoContainer">
         <img id="logoImg" src="odin-lined.png" alt="logo">
@@ -18,8 +17,52 @@
       </p>
     </div>
     <div class="formContainer">
+      <form action="">
+        <div class="formHeader">
+          <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. <br> Sign up <i>now</i> to get started.</p>
+          <p>You <i>know</i> you want to.</p>
+        </div>
+        <div class="formBody">
+          <p>Let's do this!</p>
+          <div class="formRow">
+              <div>
+                <label for="firstname">First Name:</label>
+                <input type="text" id="firstname" name="firstname" required>
+              </div>
+              <div>  
+                <label for="lastname">Last Name:</label>
+                <input type="text" id="lastname" name="lastname" required>
+              </div>
+          </div>
+          <div class="formRow">
+              <div>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+              </div>
+          </div>
+          <div class="formRow">
+              <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <span></span>
+              </div>
+              <div>  
+                <label for="confirmpass">Confirm Password</label>
+                <input type="password" id="confirmpass" name="confirmpass" required>
+                <span></span>
+              </div>
+          </div>
+        </div>
+        <div class="formFooter">
+          <button type="submit">Create Account</button>
+          <p>Already have an account? <a href="#">Log in</a></p>
+        </div>
+      </form>
     </div>
-  </section>
   
 </body>
 </html>
